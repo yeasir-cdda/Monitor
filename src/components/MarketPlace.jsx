@@ -3,23 +3,23 @@ const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 const MarketPlace = () => {
     const data = [
         {
-            name: "www.google.com",
-            value: 40,
-        },
-        {
-            name: "www.yahoo.com",
-            value: 20,
-        },
-        {
-            name: "www.mark.com",
+            name: "https://nationallandbank.org/",
             value: 80,
         },
         {
-            name: "www.maruf.com",
+            name: "globalomls.com",
+            value: 20,
+        },
+        {
+            name: "builderslotsource.app",
+            value: 80,
+        },
+        {
+            name: "lotsource.app",
             value: 70,
         },
         {
-            name: "www.maruf.com",
+            name: "refliphub.net",
             value: 70,
         },
     ];
