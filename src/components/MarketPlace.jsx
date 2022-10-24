@@ -46,7 +46,7 @@ const CustomConponent = ({ data }) => {
             <h6 className="text-[#A8A8A8] text-sm ">{data.name}</h6>
             <div className="flex gap-3 items-center w-[150px]">
                 <h5 className="text-[#A8A8A8] text-sm">{data.value}</h5>
-                {/* <CustomCart value={data.value} /> */}
+                <CustomCart value={data.value} />
             </div>
         </div>
     );
@@ -55,57 +55,34 @@ const CustomConponent = ({ data }) => {
 const CustomCart = ({ value }) => {
     const series = [
         {
-            name: "sells",
             data: [31, 40, 28, 51, 42, 109, 100, 40, 50, 10, 30, 29],
         },
     ];
 
     const options = {
         chart: {
-            height: 100,
-            type: "area",
-            toolbar: {
-                show: false,
+            sparkline: {
+                enabled: true,
             },
         },
-        grid: {
-            show: false,
-            // xaxis: {
-            //     lines: {
-            //         show: false,
-            //     },
-            // },
-            // yaxis: {
-            //     lines: {
-            //         show: false,
-            //     },
-            // },
+        fill: {
+            type: "gradient",
+            gradient: {
+                shadeIntensity: 1,
+                inverseColors: false,
+                opacityFrom: 0.45,
+                opacityTo: 0.05,
+                stops: [20, 100, 100, 100],
+            },
         },
-        dataLabels: {
-            enabled: false,
-        },
-
         stroke: {
             curve: "smooth",
+            width: 2,
         },
-        xaxis: {
-            labels: {
-                show: false,
-            },
-            lines: {
-                show: false,
-            },
-        },
-        yaxis: {
-            show: false,
-        },
-
         tooltip: {
-            x: {
-                format: "mm",
-            },
+            enabled: false,
         },
     };
 
-    return <ApexCharts options={options} series={series} type="area" height={100} />;
+    return <ApexCharts options={options} series={series} type="area" height={20} />;
 };
